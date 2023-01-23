@@ -69,24 +69,35 @@
     {
       "prompt": "What hook lets you perform side effects in function components?",
       "answers": [
-        "useState",
         "useEffect",
+        "useState",
         "useReducer",
         "I do not know"
       ],
-      "correctIndex": "1",
+      "correctIndex": 0,
       "id": 7
     },
     {
       "prompt": "What hook lets you perform side effects in function components?",
       "answers": [
         "useEffect",
-        "I do not know",
         "useState",
-        "useReducer"
+        "useReducer",
+        "I do not know"
       ],
       "correctIndex": 0,
       "id": 8
+    },
+    {
+      "prompt": "What hook lets you perform side effects in function components?",
+      "answers": [
+        "useEffect",
+        "useState",
+        "useReducer",
+        "I do not know"
+      ],
+      "correctIndex": 0,
+      "id": 9
     }
   ]
 }

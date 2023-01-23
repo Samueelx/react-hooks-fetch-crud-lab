@@ -17,10 +17,21 @@ function App() {
     });
   }, []);
 
+  function deleteQuestion(id) {
+    fetch(`${QUESTIONS_URL}/${id}`, {
+      method: 'DELETE',
+    });
+
+    setQuestions(() => {
+      const updatedArray = questions.filter((question) => question.id !== id);
+      return updatedArray;
+    });
+  }
+
   return (
     <main>
       <AdminNavBar onChangePage={setPage} />
-      {page === "Form" ? <QuestionForm setQuestions={setQuestions}/> : <QuestionList questions={questions}/>}
+      {page === "Form" ? <QuestionForm setQuestions={setQuestions}/> : <QuestionList questions={questions} onDelete={deleteQuestion} />}
     </main>
   );
 }
