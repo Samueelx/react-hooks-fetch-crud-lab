@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 const QUESTIONS_URL = "http://localhost:4000/questions";
 
-function QuestionForm(props) {
+function QuestionForm({setQuestions, questions}) {
   const [formData, setFormData] = useState({
     prompt: "",
     answer1: "",
@@ -41,7 +41,7 @@ function QuestionForm(props) {
       body: JSON.stringify(formatData(formData))
     }).then(res => res.json())
     .then(data => {
-      props.setQuestions(() => data);
+      setQuestions([...questions, data]);
     });
   }
 
